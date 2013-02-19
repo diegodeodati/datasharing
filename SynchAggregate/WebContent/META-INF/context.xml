@@ -1,0 +1,34 @@
+<Context path="/sync_to_aggregate" reloadable="true">
+
+    <Resource name="jdbc/mysql_datasharing_inspired" auth="Container" type="javax.sql.DataSource"
+		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs.$$.0"
+		validationQuery="Select 1" validationQueryTimeout="40000"
+		removeAbandoned="true" removeAbandonedTimeout="10000" 
+		maxStatementsPerConnection="8"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://10.0.140.15/inspired?zeroDateTimeBehavior=convertToNull" />
+	
+	<Resource name="jdbc/mysql_datasharing_novomatic" auth="Container" type="javax.sql.DataSource"
+		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs.$$.0"
+		validationQuery="Select 1" validationQueryTimeout="40000"
+		removeAbandoned="true" removeAbandonedTimeout="10000" 
+		maxStatementsPerConnection="8" 
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://10.0.140.15/novomatic?zeroDateTimeBehavior=convertToNull" />
+
+	<Resource name="jdbc/mysql_back_office" auth="Container" type="javax.sql.DataSource"
+		maxActive="2" maxIdle="1" maxWait="-1" username="scbi" password="scbi123"
+		validationQuery="Select 1" validationQueryTimeout="20000"
+		removeAbandoned="true" removeAbandonedTimeout="5000" 
+		maxStatementsPerConnection="8"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://192.168.3.116/vlt_export?zeroDateTimeBehavior=convertToNull" />
+		
+	<Resource name="jdbc/mysql_aggregate" auth="Container" type="javax.sql.DataSource"
+		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs"
+		validationQuery="Select 1" validationQueryTimeout="20000"
+		removeAbandoned="true" removeAbandonedTimeout="5000" 
+		maxStatementsPerConnection="8" driverClassName="com.mysql.jdbc.Driver"	url="jdbc:mysql://localhost/aggregate?zeroDateTimeBehavior=convertToNull" />	
+	
+
+</Context>
