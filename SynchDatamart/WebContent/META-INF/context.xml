@@ -1,0 +1,23 @@
+<Context path="/sync_to_datamart" reloadable="true">
+
+
+		
+	<Resource name="jdbc/mysql_aggregate" auth="Container" type="javax.sql.DataSource"
+		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs"
+		validationQuery="Select 1" validationQueryTimeout="20000"
+		removeAbandoned="true" removeAbandonedTimeout="5000" 
+		maxStatementsPerConnection="20"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/aggregate?zeroDateTimeBehavior=convertToNull" />	
+	
+	<Resource name="jdbc/mysql_datamart" auth="Container" type="javax.sql.DataSource"
+		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs"
+		validationQuery="Select 1" validationQueryTimeout="20000"
+		removeAbandoned="true" removeAbandonedTimeout="5000" 
+		maxStatementsPerConnection="20"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost/datamart?zeroDateTimeBehavior=convertToNull" />	
+	
+
+</Context>
+
