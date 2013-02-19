@@ -1,0 +1,39 @@
+<Context path="/todatasharing" reloadable="true">
+
+	<Resource name="jdbc/sqlserver_novomatic_concessionarydb"
+		auth="Container" factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
+		type="javax.sql.DataSource" driverClassName="net.sourceforge.jtds.jdbc.Driver"
+		url="jdbc:jtds:sqlserver://10.0.20.10:25510/ConcessionarySystemDB"
+		username="BplusRo" password="LAsRocca34;" validationQuery="Select 1"
+		validationQueryTimeout="30000" accessToUnderlyingConnectionAllowed="true"
+		maxActive="2" maxIdle="1" maxwait="-1" removeAbandoned="true"
+		removeAbandonedTimeout="5000" maxStatementsPerConnection="4" />
+
+	<Resource name="jdbc/sqlserver_novomatic_nuclues" auth="Container"
+		factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory" type="javax.sql.DataSource"
+		driverClassName="net.sourceforge.jtds.jdbc.Driver" url="jdbc:jtds:sqlserver://10.0.20.10:25510/NucleusDB"
+		username="BplusRo" password="LAsRocca34;" validationQuery="Select 1"
+		validationQueryTimeout="30000" accessToUnderlyingConnectionAllowed="true"
+		maxActive="1" maxIdle="1" removeAbandoned="true"
+		removeAbandonedTimeout="5000" maxStatementsPerConnection="4" maxwait="-1" />
+		
+
+	<Resource name="jdbc/mysql_datasharing" auth="Container" type="javax.sql.DataSource"
+		maxActive="2" maxIdle="1" maxWait="-1" username="novomatic" password="novomatic"
+		validationQuery="Select 1" validationQueryTimeout="10000" 
+		removeAbandoned="true" removeAbandonedTimeout="5000"  testOnBorrow="true" testWhileIdle="true"
+		maxStatementsPerConnection="8" 
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://10.0.140.15/novomatic?zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true" />
+		
+	<Resource name="jdbc/mysql_back_office" auth="Container" type="javax.sql.DataSource"
+		maxActive="2" maxIdle="1" maxWait="-1" username="scbi" password="scbi123"
+		validationQuery="Select 1" validationQueryTimeout="10000" testWhileIdle="true"
+		removeAbandoned="true" removeAbandonedTimeout="5000"
+		maxStatementsPerConnection="4"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://192.168.3.116/vlt_export?zeroDateTimeBehavior=convertToNull" />
+		
+
+</Context>
+

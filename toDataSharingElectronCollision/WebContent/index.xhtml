@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    >  
+    
+	<h:head>  		
+	<style>
+    span.ui-messages-error-summary { font-size: 12px; }
+    span.ui-messages-error-detail { font-size: 12px; }
+</style> 
+  	<link rel="stylesheet" type="text/css" href="css/style.css"
+		media="screen" />
+    </h:head>  
+
+      
+    <h:body>  
+       
+      	<div id="wrapperLogin" style="position:fixed;top:25%;left:35%;">
+      	
+      		<div id="logoLogin"><img src="images/logo-reimport.png" /></div>
+      			
+      		<div id="contentLogin" >
+
+	     		<h:form id="form" prependId="false" >  
+	     			<p:messages id="msgs" showDetail="true" autoUpdate="true"/>
+	     			<h:outputLabel value="Non disponibile al momento - altro import in corso" rendered="#{!importerBean.available}" styleClass="warn-header"/>
+	     			<p:focus context="form"/>  
+	     			<p:panel header="On Demand Import" style="width: 350px;height:150px;" styleClass="ui-widget ui-state-default ui-corner-all">
+	     				<h:panelGrid id="panelLogin" columns="2" cellpadding="1" styleClass="panelGridLoginClass" >						
+   							
+   							   <h:outputLabel for="dateStart" value="Dalla Data" />   
+							   <p:calendar id="dateStart" effect="slideDown" size="12" navigator="true" lang="it" value="#{importerBean.dataS}" pattern="dd/MM/yyyy" mindate="01/09/2010" maxdate="#{importerBean.yesterday}" minMinute="59" maxMinute="59">
+  							   <p:ajax event="dateSelect" listener="#{importerBean.changeDataS}" update="buttonSub" />
+                               <f:convertDateTime  pattern="dd/MM/yyyy" /></p:calendar>     
+    
+    						  <h:outputLabel for="dateEnd" value="alla Data" />  
+  							   <p:calendar id="dateEnd" effect="slideDown" size="12" navigator="true" lang="it" value="#{importerBean.dataE}" pattern="dd/MM/yyyy" mindate="01/09/2010" maxdate="#{importerBean.yesterday}" minMinute="59" maxMinute="59">
+  							   <p:ajax event="dateSelect" listener="#{importerBean.changeDataE}" update="buttonSub" />
+                               <f:convertDateTime  pattern="dd/MM/yyyy" /></p:calendar>    
+								  
+	     				</h:panelGrid>
+	     				
+	     				<p:commandButton value="Ok" action="#{importerBean.doThis}" id="buttonSub" disabled="#{importerBean.errorDate}" style="float:right;border:5px;border-style: solid;z-index:5;margin-top: 15px; " onclick="progress.start();startButton.disable();" widgetVar="startButton" rendered="#{importerBean.available}"/>
+    			
+    					<p:progressBar widgetVar="progress" ajax="true" value="#{importerBean.percentage}" labelTemplate="{value}" interval="4000" id="pb" styleClass="animated">  
+        					<p:ajax event="complete" listener="#{importerBean.onComplete}" oncomplete="startButton.enable();"/>  
+    					</p:progressBar>      					
+    				
+	     			</p:panel>
+			
+				</h:form>  
+				
+      		</div>
+      
+      	</div>
+      
+    </h:body>  
+    
+</html>
