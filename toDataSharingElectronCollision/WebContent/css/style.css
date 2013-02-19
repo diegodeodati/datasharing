@@ -1,0 +1,38 @@
+.warn-header{
+	border: 1px solid #CCC;
+	background-color: #E69700;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding-left: 9px;
+padding-right: 9px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size:11pt;
+}
+
+.ui-datepicker-calendar {
+	background-color: white;
+}
+
+.animated .ui-progressbar-value {
+	background-image:
+		url(http://www.primefaces.org/showcase/images/pbar-ani.gif);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	height: 10px;
+}
+
+.ui-progressbar {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	width: 310px;
+	height: 10px;
+	
+}
+
+
+.ui-progressbar .ui-progressbar-label {
+	font-size: 10px;	
+}

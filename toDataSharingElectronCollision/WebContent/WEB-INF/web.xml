@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>syn_to_datasharing</display-name>
+  <listener>
+    <listener-class>it.todatasharing.servlet.AppListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>SchedulerServlet</servlet-name>
+    <servlet-class>it.todatasharing.servlet.SchedulerServlet</servlet-class>
+    <init-param>
+      <description>intervallo descritto in minuti per l'esecuzione della servlet</description>
+      <param-name>interval</param-name>
+      <param-value>15</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <resource-ref>
+    <res-ref-name>jdbc/mysql_datasharing</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <res-ref-name>jdbc/sqlserver_cqi</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  <context-param>
+    <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+    <param-value>.xhtml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>primefaces.THEME</param-name>
+    <param-value>excite-bike</param-value>
+  </context-param>
+  <welcome-file-list>
+    <welcome-file>index.xhtml</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>resources.application</param-value>
+  </context-param>
+  <context-param>
+    <description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
+    <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    <param-value>client</param-value>
+  </context-param>
+  <listener>
+    <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+  </listener>
+</web-app>
