@@ -3,20 +3,20 @@
 
 		
 	<Resource name="jdbc/mysql_aggregate" auth="Container" type="javax.sql.DataSource"
-		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs"
+		maxActive="1" maxIdle="1" maxWait="-1" username="diego" password="manolo.2011"
 		validationQuery="Select 1" validationQueryTimeout="20000"
 		removeAbandoned="true" removeAbandonedTimeout="5000" 
 		maxStatementsPerConnection="20"
 		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost/aggregate?zeroDateTimeBehavior=convertToNull" />	
+		url="jdbc:mysql://10.0.140.31/aggregate?zeroDateTimeBehavior=convertToNull" />	
 	
 	<Resource name="jdbc/mysql_datamart" auth="Container" type="javax.sql.DataSource"
-		maxActive="1" maxIdle="1" maxWait="-1" username="birs" password="birs"
+		maxActive="1" maxIdle="1" maxWait="-1" username="diego" password="manolo.2011"
 		validationQuery="Select 1" validationQueryTimeout="20000"
 		removeAbandoned="true" removeAbandonedTimeout="5000" 
 		maxStatementsPerConnection="20"
 		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost/datamart?zeroDateTimeBehavior=convertToNull" />	
+		url="jdbc:mysql://10.0.140.31/datamart?zeroDateTimeBehavior=convertToNull" />	
 	
 
 </Context>
