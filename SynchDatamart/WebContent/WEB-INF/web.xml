@@ -19,6 +19,12 @@
 		</init-param>
 		<load-on-startup>0</load-on-startup>
 	</servlet>
+
+	<servlet>
+		<display-name>Nagios</display-name>
+		<servlet-name>Nagios</servlet-name>
+		<servlet-class>it.bplus.servlet.Nagios</servlet-class>
+	</servlet>
 	<security-role>
 		<description>Authorized to see all pages</description>
 		<role-name>*</role-name>
@@ -46,4 +52,9 @@
 	<session-config>
 		<session-timeout>60</session-timeout>
 	</session-config>
+	
+	<servlet-mapping>
+		<servlet-name>Nagios</servlet-name>
+		<url-pattern>/nagios</url-pattern>
+	</servlet-mapping>
 </web-app>
