@@ -186,6 +186,7 @@ public class ImporterDelegate {
 
 				MeterDAO.fixMeterGames(connToDataSharingInspired,
 						connToAggregate, s.getUNIQUE_SESSION_ID());
+				
 				MeterDAO.insertMeterVltToFill(connToAggregate, s);
 	
 				logger.info("Log End Import");
