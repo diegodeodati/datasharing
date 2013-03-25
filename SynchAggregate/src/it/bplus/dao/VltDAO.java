@@ -115,7 +115,7 @@ public class VltDAO {
 		logger.info("Start - Get Active Vlt");
 		ArrayList<String> listActiveVlt = new ArrayList<String>();
 
-		String sql = "select AAMS_VLT_CODE,AAMS_LOCATION_CODE,AAMS_GAME_SYSTEM_CODE "
+		String sql = "select AAMS_VLT_CODE "
 				+ " from birsgsmeters b where date(b.DATA) = date(?) "
 				+ "and b.AAMS_GAME_SYSTEM_CODE = ? group by b.AAMS_VLT_CODE";
 
