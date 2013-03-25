@@ -46,4 +46,13 @@
 	<session-config>
 		<session-timeout>120</session-timeout>
 	</session-config>
+	<servlet>
+		<display-name>Nagios</display-name>
+		<servlet-name>Nagios</servlet-name>
+		<servlet-class>it.bplus.servlet.Nagios</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Nagios</servlet-name>
+		<url-pattern>/nagios</url-pattern>
+	</servlet-mapping>
 </web-app>

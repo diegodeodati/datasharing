@@ -181,10 +181,7 @@ public class DateUtils {
     	return sHour==0 && sMinute==00 && eHour==23 && eMinute==59;
     }
     
-    public static boolean isEndOfDay(Date dStart,Date dEnd){
-    	int sHour = DateUtils.hour(dStart);
-    	int sMinute = DateUtils.minute(dStart);
-    	
+    public static boolean isEndOfDay(Date dStart,Date dEnd){    	
     	int eHour = DateUtils.hour(dEnd);
     	int eMinute = DateUtils.minute(dEnd);	
     	
@@ -194,4 +191,4 @@ public class DateUtils {
     public static boolean isRealTime(Date dStart,Date dEnd){
     	return !isPregress(dStart,dEnd);
     }
-}
+    }
