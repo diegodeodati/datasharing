@@ -81,7 +81,7 @@ protected static Logger logger = Logger.getLogger(VltMilionarieDAO.class);
     	
     	connStaging.setAutoCommit(false);
     	
-    	String sqlInsertSeicento = "INSERT INTO BIRSVLTMILIONARIE (ID,AAMS_VLT_CODE,DATA,AAMS_LOCATION_CODE,BET,WIN,BET_REALE,WIN_REALE)"+
+    	String sqlInsertSeicento = "INSERT IGNORE INTO BIRSVLTMILIONARIE (ID,AAMS_VLT_CODE,DATA,AAMS_LOCATION_CODE,BET,WIN,BET_REALE,WIN_REALE)"+
     	" VALUES (?,?,?,?,?,?,?,?)";
  	    PreparedStatement ps = connStaging.prepareStatement(sqlInsertSeicento);
  	    
